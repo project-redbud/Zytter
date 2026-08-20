@@ -1,0 +1,196 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/HeroesList.cs" id="1"]
+[ext_resource type="Theme" path="res://theme.tres" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="SectionStyle"]
+bg_color = Color(1, 0.99, 0.995, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95, 0.66, 0.75, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+
+[node name="HeroesList" type="Window"]
+layout_mode = 3
+title = "英雄 & 物品图鉴"
+borderless = true
+size = Vector2i(1000, 640)
+theme = ExtResource("2")
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.985, 0.965, 0.97, 1)
+
+[node name="Accent" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+color = Color(0.91, 0.27, 0.38, 1)
+
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -310.0
+offset_right = 490.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Root"]
+layout_mode = 2
+text = "📖 英雄 & 物品图鉴"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.9, 0.35, 0.5, 1)
+
+[node name="Sections" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="HeroPanel" type="PanelContainer" parent="Root/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("SectionStyle")
+
+[node name="HeroBox" type="VBoxContainer" parent="Root/Sections/HeroPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeroTitle" type="Label" parent="Root/Sections/HeroPanel/HeroBox"]
+layout_mode = 2
+text = "— 英雄 —"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.91, 0.27, 0.38, 1)
+
+[node name="HeroSelect" type="OptionButton" parent="Root/Sections/HeroPanel/HeroBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HeroDetail" type="HBoxContainer" parent="Root/Sections/HeroPanel/HeroBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="HeroPortrait" type="TextureRect" parent="Root/Sections/HeroPanel/HeroBox/HeroDetail"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeroInfo" type="VBoxContainer" parent="Root/Sections/HeroPanel/HeroBox/HeroDetail"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="HeroName" type="Label" parent="Root/Sections/HeroPanel/HeroBox/HeroDetail/HeroInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "请选择英雄"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.32, 0.22, 0.3, 1)
+
+[node name="HeroStats" type="Label" parent="Root/Sections/HeroPanel/HeroBox/HeroDetail/HeroInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="HeroSkills" type="RichTextLabel" parent="Root/Sections/HeroPanel/HeroBox/HeroDetail/HeroInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+theme_override_font_sizes/font_size = 14
+
+[node name="ItemPanel" type="PanelContainer" parent="Root/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("SectionStyle")
+
+[node name="ItemBox" type="VBoxContainer" parent="Root/Sections/ItemPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ItemTitle" type="Label" parent="Root/Sections/ItemPanel/ItemBox"]
+layout_mode = 2
+text = "— 物品 —"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.91, 0.27, 0.38, 1)
+
+[node name="ItemSelect" type="OptionButton" parent="Root/Sections/ItemPanel/ItemBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ItemDetail" type="HBoxContainer" parent="Root/Sections/ItemPanel/ItemBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="ItemIcon" type="TextureRect" parent="Root/Sections/ItemPanel/ItemBox/ItemDetail"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 150)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemInfo" type="VBoxContainer" parent="Root/Sections/ItemPanel/ItemBox/ItemDetail"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="ItemName" type="Label" parent="Root/Sections/ItemPanel/ItemBox/ItemDetail/ItemInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "请选择物品"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.32, 0.22, 0.3, 1)
+
+[node name="ItemMeta" type="Label" parent="Root/Sections/ItemPanel/ItemBox/ItemDetail/ItemInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.45, 0.55, 1)
+
+[node name="ItemDesc" type="Label" parent="Root/Sections/ItemPanel/ItemBox/ItemDetail/ItemInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+size_flags_vertical = 3
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="Close" type="Button" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(220, 0)
+text = "关 闭"

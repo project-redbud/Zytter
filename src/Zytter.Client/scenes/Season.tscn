@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://c5vbolt3mujjx"]
+
+[ext_resource type="Script" path="res://scripts/Season.cs" id="1"]
+[ext_resource type="Theme" path="res://theme.tres" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="LeftPanelStyle"]
+bg_color = Color(1, 0.99, 0.995, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95, 0.66, 0.75, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="RightPanelStyle"]
+bg_color = Color(1, 0.99, 0.995, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95, 0.66, 0.75, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
+
+[node name="Season" type="Window"]
+layout_mode = 3
+title = "赛季数据"
+borderless = true
+size = Vector2i(1000, 560)
+theme = ExtResource("2")
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.985, 0.965, 0.97, 1)
+
+[node name="Accent" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+color = Color(0.91, 0.27, 0.38, 1)
+
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -270.0
+offset_right = 490.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Columns" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="LeftPanel" type="PanelContainer" parent="Root/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("LeftPanelStyle")
+
+[node name="LeftBox" type="VBoxContainer" parent="Root/Columns/LeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BoardTitle" type="Label" parent="Root/Columns/LeftPanel/LeftBox"]
+layout_mode = 2
+text = "赛季天梯排行榜"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0.9, 0.35, 0.5, 1)
+
+[node name="Board" type="Tree" parent="Root/Columns/LeftPanel/LeftBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.32, 0.22, 0.3, 1)
+
+[node name="UpdatedAt" type="Label" parent="Root/Columns/LeftPanel/LeftBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "数据统计截至于：—"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.45, 0.55, 1)
+
+[node name="RightPanel" type="PanelContainer" parent="Root/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("RightPanelStyle")
+
+[node name="RightBox" type="VBoxContainer" parent="Root/Columns/RightPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ServerTag" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.2, 0.55, 0.5, 1)
+
+[node name="SeasonTime" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "赛季时间：—"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.45, 0.55, 1)
+
+[node name="Username" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0.91, 0.27, 0.38, 1)
+
+[node name="MyHeader" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+layout_mode = 2
+text = "当前赛季数据"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.91, 0.58, 0.48, 1)
+
+[node name="EloRow" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Elo：—"
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(0.32, 0.22, 0.3, 1)
+
+[node name="RankRow" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rank：—"
+theme_override_font_sizes/font_size = 17
+
+[node name="PlaceRow" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "定级赛：—"
+theme_override_font_sizes/font_size = 17
+
+[node name="GamesRow" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "赛季场次：—"
+theme_override_font_sizes/font_size = 17
+
+[node name="WinRow" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "赛季胜场：—"
+theme_override_font_sizes/font_size = 17
+
+[node name="LoseRow" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "赛季败场：—"
+theme_override_font_sizes/font_size = 17
+
+[node name="RateRow" type="Label" parent="Root/Columns/RightPanel/RightBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "赛季胜率：—"
+theme_override_font_sizes/font_size = 17
+
+[node name="Status" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.45, 0.55, 1)
+
+[node name="Back" type="Button" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(220, 0)
+text = "关 闭"

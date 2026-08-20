@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://b7lu2w15rerkd"]
+
+[ext_resource type="Script" uid="uid://c28v2ewweovpp" path="res://scripts/Login.cs" id="1"]
+[ext_resource type="Theme" uid="uid://c1yrbe6c65g8e" path="res://theme.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://bh2c3uk25w4st" path="res://assets/ui/login.jpg" id="3"]
+
+[node name="Login" type="Control" unique_id=1250624483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2")
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=732210771]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FormPanel" type="MarginContainer" parent="." unique_id=1220471989]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 141.0
+offset_top = 129.0
+offset_right = 22.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 70
+
+[node name="Form" type="VBoxContainer" parent="FormPanel" unique_id=494674070]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AccountRow" type="HBoxContainer" parent="FormPanel/Form" unique_id=1018601262]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="AccountLabel" type="Label" parent="FormPanel/Form/AccountRow" unique_id=1257464845]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "学园通行证"
+
+[node name="Username" type="LineEdit" parent="FormPanel/Form/AccountRow" unique_id=90067990]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Zytter ID（2~16 字符）"
+
+[node name="PasswordRow" type="HBoxContainer" parent="FormPanel/Form" unique_id=2044908690]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PasswordLabel" type="Label" parent="FormPanel/Form/PasswordRow" unique_id=771242767]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "通行证密码"
+
+[node name="Password" type="LineEdit" parent="FormPanel/Form/PasswordRow" unique_id=2068867578]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "密码（6~32 字符）"
+secret = true
+
+[node name="ServerRow" type="HBoxContainer" parent="FormPanel/Form" unique_id=1544039831]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ServerLabel" type="Label" parent="FormPanel/Form/ServerRow" unique_id=405160288]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "服务器地址"
+
+[node name="ServerUrl" type="LineEdit" parent="FormPanel/Form/ServerRow" unique_id=2078985090]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "http://127.0.0.1:17717"
+placeholder_text = "http://127.0.0.1:17717"
+
+[node name="Links" type="HBoxContainer" parent="." unique_id=1030685656]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 450.0
+offset_right = 1285.0
+offset_bottom = 594.0
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="RegisterLink" type="Button" parent="Links" unique_id=210178005]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902, 0.4, 0.514, 1)
+theme_override_font_sizes/font_size = 18
+text = "注册入口"
+flat = true
+
+[node name="BlogLink" type="Button" parent="Links" unique_id=814452977]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902, 0.4, 0.514, 1)
+theme_override_font_sizes/font_size = 18
+text = "官方网站"
+flat = true
+
+[node name="QuitLink" type="Button" parent="Links" unique_id=2093180167]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902, 0.4, 0.514, 1)
+theme_override_font_sizes/font_size = 18
+text = "退出游戏"
+flat = true
+
+[node name="CopyrightLink" type="Button" parent="." unique_id=819590837]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 982.0
+offset_top = 715.0
+offset_right = 1325.0
+offset_bottom = 753.0
+theme_override_colors/font_color = Color(0.804, 0.361, 0.361, 1)
+theme_override_font_sizes/font_size = 15
+text = "游戏内所有设定均有版权归属，参见官方网站。"
+flat = true
+alignment = 0
+
+[node name="Copyright2" type="Label" parent="." unique_id=1871146606]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 695.0
+offset_right = 1320.0
+offset_bottom = 717.0
+theme_override_colors/font_color = Color(0.804, 0.361, 0.361, 1)
+theme_override_font_sizes/font_size = 15
+text = "使用 AGPL v3 许可证发布 ©2014-至今 红芽计划."
+
+[node name="Status" type="Label" parent="." unique_id=731208456]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 823.0
+offset_top = 208.0
+offset_right = 1240.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0.95, 0.85, 0.6, 1)
+theme_override_font_sizes/font_size = 17
+horizontal_alignment = 1
+
+[node name="EnterGame" type="Button" parent="." unique_id=437001453]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 953.0
+offset_top = 435.0
+offset_right = 1270.0
+offset_bottom = 487.0
+theme_override_colors/font_color = Color(0.902, 0.4, 0.514, 1)
+theme_override_font_sizes/font_size = 26
+text = "进入游戏"
+flat = true

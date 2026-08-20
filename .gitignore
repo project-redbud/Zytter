@@ -1,0 +1,27 @@
+# .NET
+bin/
+obj/
+*.user
+.vs/
+
+# Godot
+.godot/
+godot-client/.godot/
+*.tmp
+
+# 数据文件
+*.db
+*.db-wal
+*.db-shm
+zytter.db
+
+# 旧版 Java 源码仅作参考，不参与构建
+.legacy
+src/Zytter.Client/assets/
+
+# Godot
+Godot_*.exe
+GodotSharp/
+
+# 内部文档
+docs_internal/

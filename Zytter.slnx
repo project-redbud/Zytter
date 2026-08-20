@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Zytter.Client/Zytter.Client.csproj">
+      <BuildType Project="Debug" />
+    </Project>
+    <Project Path="src/Zytter.Core/Zytter.Core.csproj" />
+    <Project Path="src/Zytter.Server/Zytter.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Zytter.Core.Tests/Zytter.Core.Tests.csproj" />
+    <Project Path="tests/Zytter.Server.IntegrationTests/Zytter.Server.IntegrationTests.csproj" />
+  </Folder>
+</Solution>

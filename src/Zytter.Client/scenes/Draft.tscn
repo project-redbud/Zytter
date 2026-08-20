@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgk606qst1thu"]
+
+[ext_resource type="Script" uid="uid://jrih4e0tq51e" path="res://scripts/Draft.cs" id="1"]
+[ext_resource type="Theme" path="res://theme.tres" id="2"]
+
+[node name="Draft" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2")
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.985, 0.965, 0.97, 1)
+
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="StatusRow" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+
+[node name="Status" type="Label" parent="Root/StatusRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "正在加入禁选……"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.87, 0.3, 0.48, 1)
+
+[node name="Timer" type="Label" parent="Root/StatusRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+theme_override_font_sizes/font_size = 22
+
+[node name="EnemyPanel" type="PanelContainer" parent="Root"]
+layout_mode = 2
+
+[node name="EnemyBox" type="VBoxContainer" parent="Root/EnemyPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="EnemyTitle" type="Label" parent="Root/EnemyPanel/EnemyBox"]
+layout_mode = 2
+text = "对方（后手）"
+
+[node name="EnemyRow" type="HBoxContainer" parent="Root/EnemyPanel/EnemyBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="EnemyBanLabel" type="Label" parent="Root/EnemyPanel/EnemyBox/EnemyRow"]
+layout_mode = 2
+text = "禁"
+
+[node name="EnemyBanSlots" type="HBoxContainer" parent="Root/EnemyPanel/EnemyBox/EnemyRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="EnemyPickLabel" type="Label" parent="Root/EnemyPanel/EnemyBox/EnemyRow"]
+layout_mode = 2
+text = "选"
+
+[node name="EnemyPickSlots" type="HBoxContainer" parent="Root/EnemyPanel/EnemyBox/EnemyRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Hint" type="Label" parent="Root"]
+layout_mode = 2
+text = "点击下方候选英雄执行操作：禁用阶段点击 = 禁掉该英雄；选用阶段点击 = 选其出战"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.5, 0.42, 0.52, 1)
+
+[node name="PoolScroll" type="ScrollContainer" parent="Root"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Pool" type="GridContainer" parent="Root/PoolScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="OrderBox" type="VBoxContainer" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ConfirmOrder" type="Button" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "提交出场顺序"
+tooltip_text = "用上方下拉框决定出场顺序（1 号最先上场），然后点此提交"
+
+[node name="MyPanel" type="PanelContainer" parent="Root"]
+layout_mode = 2
+
+[node name="MyBox" type="VBoxContainer" parent="Root/MyPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MyTitle" type="Label" parent="Root/MyPanel/MyBox"]
+layout_mode = 2
+text = "你（下方槽位）"
+
+[node name="MyRow" type="HBoxContainer" parent="Root/MyPanel/MyBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MyBanLabel" type="Label" parent="Root/MyPanel/MyBox/MyRow"]
+layout_mode = 2
+text = "禁"
+
+[node name="MyBanSlots" type="HBoxContainer" parent="Root/MyPanel/MyBox/MyRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MyPickLabel" type="Label" parent="Root/MyPanel/MyBox/MyRow"]
+layout_mode = 2
+text = "选"
+
+[node name="MyPickSlots" type="HBoxContainer" parent="Root/MyPanel/MyBox/MyRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4

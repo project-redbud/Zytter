@@ -1,0 +1,14 @@
+[
+  { "id": 1,  "name": "奕阳",   "ename": "yy",   "hp": 31, "mp": 18, "atk": 6, "def": 2, "adf": 2, "move": 4, "remp": 3, "hpp": 0, "q": 1,  "w": 2,  "e": 3,  "r": null, "crystal": true },
+  { "id": 2,  "name": "刘晓释", "ename": "lxs",  "hp": 28, "mp": 3,  "atk": 6, "def": 3, "adf": 2, "move": 6, "remp": 1, "hpp": 0, "q": 4,  "w": 5,  "e": 6,  "r": null, "crystal": false },
+  { "id": 3,  "name": "杨圣诺", "ename": "ysn",  "hp": 34, "mp": 12, "atk": 7, "def": 2, "adf": 1, "move": 7, "remp": 2, "hpp": 0, "q": 7,  "w": 8,  "e": null, "r": null, "crystal": false },
+  { "id": 4,  "name": "罗天杰", "ename": "ltj",  "hp": 33, "mp": 5,  "atk": 5, "def": 1, "adf": 3, "move": 6, "remp": 1, "hpp": 0, "q": 12, "w": 13, "e": 14, "r": null, "crystal": false },
+  { "id": 5,  "name": "张枫",   "ename": "zf",   "hp": 29, "mp": 15, "atk": 8, "def": 3, "adf": 0, "move": 4, "remp": 2, "hpp": 0, "q": 9,  "w": 10, "e": 11, "r": null, "crystal": false },
+  { "id": 6,  "name": "郈与却", "ename": "hyq",  "hp": 36, "mp": 20, "atk": 4, "def": 1, "adf": 2, "move": 3, "remp": 4, "hpp": 0, "q": 15, "w": 16, "e": 17, "r": 18, "crystal": true },
+  { "id": 7,  "name": "谢悠涵", "ename": "xyh",  "hp": 26, "mp": 18, "atk": 4, "def": 1, "adf": 4, "move": 1, "remp": 3, "hpp": 0, "q": 19, "w": 20, "e": 21, "r": null, "crystal": false },
+  { "id": 8,  "name": "张可汐", "ename": "zkx",  "hp": 27, "mp": 14, "atk": 3, "def": 2, "adf": 0, "move": 2, "remp": 3, "hpp": 0, "q": 22, "w": 23, "e": 24, "r": null, "crystal": false },
+  { "id": 9,  "name": "郑心予", "ename": "zxy",  "hp": 29, "mp": 20, "atk": 3, "def": 2, "adf": 2, "move": 3, "remp": 4, "hpp": 0, "q": 25, "w": 26, "e": 27, "r": 28, "crystal": true },
+  { "id": 10, "name": "刘珂明", "ename": "lm",   "hp": 30, "mp": 7,  "atk": 7, "def": 2, "adf": 1, "move": 5, "remp": 1, "hpp": 0, "q": 29, "w": 30, "e": null, "r": null, "crystal": false },
+  { "id": 11, "name": "苏璟静", "ename": "sjj",  "hp": 26, "mp": 20, "atk": 4, "def": 2, "adf": 3, "move": 6, "remp": 3, "hpp": 0, "q": 31, "w": 32, "e": 33, "r": 34, "crystal": true },
+  { "id": 12, "name": "维多利娜", "ename": "w",   "hp": 35, "mp": 10, "atk": 6, "def": 1, "adf": 2, "move": 7, "remp": 2, "hpp": 0, "q": 35, "w": 36, "e": null, "r": null, "crystal": false }
+]
